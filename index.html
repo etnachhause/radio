@@ -62,7 +62,7 @@
 				<p style='font-family: Arial, Verdana' id='demo' />
 			</div>
 		</center>
-<audio id="myAudio" autoplay="autoplay">
+<audio id="myAudio" autoplay="autoplay class="hidden" preload="none">
   <source id="sender" src="https://stream.89.0rtl.de/live/mp3-128/radioplayerhp/" type="audio/mpeg">
 Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 </audio>
@@ -100,72 +100,72 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 			}
 			
 			function ndr1(){
-				var myAudio = document.getElementById("myAudio");				
-				myAudio.pause();
+				var radio = document.getElementById("myAudio");				
+				radio.pause();
 				document.getElementById("myAudio").currentTime = 0;
 				var b=document.getElementById('sender');			
 				b.src="https://www.ndr.de/resources/metadaten/audio/m3u/ndr1niedersachsen.m3u";
 				alert( 'NDR 1');				
-				myAudio.play();
+				radio.play();
 			};
 			function ndr2(){
-				var myAudio = document.getElementById("myAudio");
-				myAudio.pause();
+				var radio = document.getElementById("myAudio");
+				radio.pause();
 				document.getElementById("myAudio").currentTime = 0;
 				var b=document.getElementById('sender');
 				b.src="http://icecast.ndr.de/ndr/ndr2/niedersachsen/mp3/128/stream.mp3";
 				alert( 'NDR 2');
-				myAudio.play();
+				radio.play();
 			};function antenne(){
-				var myAudio = document.getElementById("myAudio");
-				myAudio.pause();
+				var radio = document.getElementById("myAudio");
+				radio.pause();
 				document.getElementById("myAudio").currentTime = 0;
 				var b=document.getElementById('sender');
 				b.src="https://stream.antenne.com/antenne-nds/mp3-128";
 				alert( 'Antenne');
-				myAudio.play();
+				radio.play();
 			};function ffn(){
-				var myAudio = document.getElementById("myAudio");
-				myAudio.pause();
+				var radio = document.getElementById("myAudio");
+				radio.pause();
 				var b=document.getElementById('sender');
 				b.src="https://ffn-de-hz-fal-stream06-cluster01.radiohost.de/ffn_mp3-192";
 				alert( 'FFN');
-				myAudio.play();
+				radio.play();
 			};function radio21(){
-				var myAudio = document.getElementById("myAudio");
-				myAudio.pause();
+				var radio = document.getElementById("myAudio");
+				radio.pause();
 				var b=document.getElementById('sender');
 				b.src="https://radio21.streamabc.net/radio21-hannover-mp3-192-3735655";
 				alert( 'Radio21');
-				myAudio.play();
+				radio.play();
 			};function r8080(){
-				var myAudio = document.getElementById("myAudio");
-				myAudio.pause();
+				var radio = document.getElementById("myAudio");
+				radio.pause();
 				var b=document.getElementById('sender');
 				b.src="https://streams.80s80s.de/100/mp3-192/streams.80s80s.de/";
 				alert( '8080s');
-				myAudio.play();
+				radio.play();
 			};function rtl(){
-				var myAudio = document.getElementById("myAudio");
-				myAudio.pause();
+				var radio = document.getElementById("myAudio");
+				radio.pause();
 				var b=document.getElementById('sender');
 				b.src="https://stream.89.0rtl.de/live/mp3-128/radioplayerhp/";
 				alert( 'RTL 89.0');
-				myAudio.play();
+				radio.play();
 			};function rtlmix(){
-				var myAudio = document.getElementById("myAudio");
-				myAudio.pause();
+				var radio = document.getElementById("myAudio");
+				radio.pause();
 				var b=document.getElementById('sender');
 				b.src="https://stream.89.0rtl.de/mix/mp3-128/";
 				alert( 'RTL 89.0 in The Mix');
-				myAudio.play();
+				radio.play();
 			};function njoy(){
-				var myAudio = document.getElementById("myAudio");
-				myAudio.pause();
+				var radio = document.getElementById("myAudio");
+				radio.pause();
 				var b=document.getElementById('sender');
 				b.src="http://www.ndr.de/resources/metadaten/audio/m3u/n-joy.m3u";
 				alert( 'NJoy');
-				myAudio.play();
+				radio.play();
 			};
 
 			
