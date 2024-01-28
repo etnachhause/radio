@@ -62,7 +62,7 @@
 				<p style='font-family: Arial, Verdana' id='demo' />
 			</div>
 		</center>
-<audio id="myAudio">
+<audio id="myAudio" autoplay="autoplay">
   <source id="sender" src="https://stream.89.0rtl.de/live/mp3-128/radioplayerhp/" type="audio/mpeg">
 Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 </audio>
@@ -100,8 +100,9 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 			}
 			
 			function ndr1(){
-				var myAudio = document.getElementById("myAudio");
+				var myAudio = document.getElementById("myAudio");				
 				myAudio.pause();
+				document.getElementById("myAudio").currentTime = 0;
 				var b=document.getElementById('sender');			
 				b.src="https://www.ndr.de/resources/metadaten/audio/m3u/ndr1niedersachsen.m3u";
 				alert( 'NDR 1');				
@@ -110,6 +111,7 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 			function ndr2(){
 				var myAudio = document.getElementById("myAudio");
 				myAudio.pause();
+				document.getElementById("myAudio").currentTime = 0;
 				var b=document.getElementById('sender');
 				b.src="http://icecast.ndr.de/ndr/ndr2/niedersachsen/mp3/128/stream.mp3";
 				alert( 'NDR 2');
@@ -117,6 +119,7 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 			};function antenne(){
 				var myAudio = document.getElementById("myAudio");
 				myAudio.pause();
+				document.getElementById("myAudio").currentTime = 0;
 				var b=document.getElementById('sender');
 				b.src="https://stream.antenne.com/antenne-nds/mp3-128";
 				alert( 'Antenne');
