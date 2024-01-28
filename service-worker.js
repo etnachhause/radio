@@ -3,8 +3,15 @@ var filesToCache = [
 	'service-worker.js',
 	'index.html',
 	'bilder/favicon.ico',
-	'bilder/sonne.png',
-	'bilder/euro.png',
+	'bilder/ndr1.jpeg',
+	'bilder/ndr2.jpeg',
+	'bilder/ffn.jpeg',
+	'bilder/antenne.jpeg',
+	'bilder/radio21.jpeg',
+	'bilder/8080.jpeg',
+	'bilder/rtl.jpeg',
+	'bilder/rtlmix.jpeg',
+	'bilder/njoy.jpeg',
 	'bilder/sonne144.png',
 	'bilder/touch-icon-iphone.png'	
 ];
