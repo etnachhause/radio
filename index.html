@@ -79,10 +79,13 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 			}
   			
 			document.getElementById("ndr1").onclick = function () {
-				
+				document.getElementById("ndr2").border="5px solid transparent";
+				document.getElementById("ndr1").border="5px solid #555"
 				ndr1();
 			};
 			document.getElementById("ndr2").onclick = function () {
+				document.getElementById("ndr1").border="5px solid transparent";
+				document.getElementById("ndr2").border="5px solid #555";
 				ndr2();
 			};document.getElementById("antenne").onclick = function () {
 				antenne();
