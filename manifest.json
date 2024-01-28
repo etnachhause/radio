@@ -1,8 +1,8 @@
 {
-  "name": "solar",
-  "short_name": "Solar",
-  "description": "my first solar PWA",
-  "start_url": "https://etnachhause.github.io/solar2/index.html",
+  "name": "Radio",
+  "short_name": "Radio",
+  "description": "my first Web Radio",
+  "start_url": "https://etnachhause.github.io/radio/index.html",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
