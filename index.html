@@ -52,7 +52,7 @@
 				<input type='image' id='rtl' class='show-detail' src='bilder/rtl.jpeg' height='80px' align='middle'></button>
 				</td>
 				<td>
-				<input type='image' id='8080' class='show-detail' src='bilder/8080.jpeg' height='80px' align='middle'></button>
+				<input type='image' id='r8080' class='show-detail' src='bilder/8080.jpeg' height='80px' align='middle'></button>
 				</td>
 				<td>
 				<input type='image' id='rtlmix' class='show-detail' src='bilder/rtlmix.jpeg' height='80px' align='middle'></button>
@@ -90,8 +90,8 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 				ffn();
 			};document.getElementById("radio21").onclick = function () {
 				radio21();
-			};document.getElementById("8080").onclick = function () {
-				8080();
+			};document.getElementById("r8080").onclick = function () {
+				r8080();
 			};document.getElementById("njoy").onclick = function () {
 				njoy();
 			};document.getElementById("rtl").onclick = function () {
@@ -118,18 +118,18 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 			};function radio21(){
 				var b=document.getElementById('sender');
 				b.src="https://radio21.streamabc.net/radio21-hannover-mp3-192-3735655";
-			};function 8080(){
+			};function r8080(){
 				var b=document.getElementById('sender');
-				b.src=‘https://streams.80s80s.de/100/mp3-192/streams.80s80s.de/‘;
+				b.src="https://streams.80s80s.de/100/mp3-192/streams.80s80s.de/";
 			};function rtl(){
 				var b=document.getElementById('sender');
-				b.src=‘https://stream.89.0rtl.de/live/mp3-128/radioplayerhp/‘;
+				b.src="https://stream.89.0rtl.de/live/mp3-128/radioplayerhp/";
 			};function rtlmix(){
 				var b=document.getElementById('sender');
-				b.src=‘https://stream.89.0rtl.de/mix/mp3-128/‘;
+				b.src="https://stream.89.0rtl.de/mix/mp3-128/";
 			};function njoy(){
 				var b=document.getElementById('sender');
-				b.src=‘http://www.ndr.de/resources/metadaten/audio/m3u/n-joy.m3u‘;
+				b.src="http://www.ndr.de/resources/metadaten/audio/m3u/n-joy.m3u";
 			};
 
 			
