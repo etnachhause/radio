@@ -62,7 +62,7 @@
 				<p style='font-family: Arial, Verdana' id='demo' />
 			</div>
 		</center>
-<audio controls>
+<audio id="myAudio">
   <source id="sender" src="https://stream.89.0rtl.de/live/mp3-128/radioplayerhp/" type="audio/mpeg">
 Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 </audio>
@@ -77,8 +77,9 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 
 			 });
 			}
-
+  			myAudio.play();
 			document.getElementById("ndr1").onclick = function () {
+				myAudio.pause();
 				ndr1();
 			};
 			document.getElementById("ndr2").onclick = function () {
@@ -101,8 +102,9 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 			
 			function ndr1(){
 				var b=document.getElementById('sender');			
-				b.src=‘https://www.ndr.de/resources/metadaten/audio/m3u/ndr1niedersachsen.m3u‘;
+				b.src="https://www.ndr.de/resources/metadaten/audio/m3u/ndr1niedersachsen.m3u";
 				  alert( 'NDR 1');
+				myAudio.play();
 			};
 			function ndr2(){
 				var b=document.getElementById('sender');
