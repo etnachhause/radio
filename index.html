@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<meta charset="utf-8">
-		<title>Photovoltaik</title>
+		<title>Radio</title>
   		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 		<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,user-scalable=0">
@@ -11,24 +11,47 @@
 		<meta name="format-detection" content="telephone=no">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
 		<meta name="mobile-web-app-capable" content="yes">
-
 		
 		<link rel="apple-touch-icon"  href="bilder/touch-icon-iphone.png">
 		<link rel="icon" type="image/x-icon" href="bilder/touch-icon-iphone.png">
   		<link rel="manifest" href="manifest.json">
-
-
 	</head>
 	<body>
 		<center>
 			<div style="text-align: center">
 				<br>
-				<h1>PHOTOVOLTAIK</h1>
+				<h1>Radio</h1>
 				<p style='font-family: Arial, Verdana' >(Andys Solarpaneel)</p>
 				<h2></h2>
-
-				<input type='image' id='touchLocal' class='show-detail' src='bilder/sonne.png' height='80px' align='middle'></button>
-				<input type='image' id='touchLocal2' class='show-detail' src='bilder/euro.png' height='80px' align='middle'></button>
+				<table>
+				<tr>
+				<td>
+				<input type='image' id='ndr1' class='show-detail' src='bilder/ndr1.png' height='80px' align='middle'></button>
+				</td>
+				<td>
+				<input type='image' id='ndr2' class='show-detail' src='bilder/ndr2.png' height='80px' align='middle'></button>
+				</td>
+				<td>
+				<input type='image' id='ffn' class='show-detail' src='bilder/ffn.png' height='80px' align='middle'></button>
+				</td>
+				</tr>
+				<tr>
+				<td>	
+				<input type='image' id='antenne' class='show-detail' src='bilder/antenne.png' height='80px' align='middle'></button>
+				</td>
+				<td>
+				<input type='image' id='radio21' class='show-detail' src='bilder/radio21.png' height='80px' align='middle'></button>
+				</td>
+				<td>
+				<input type='image' id='njoy' class='show-detail' src='bilder/njoy.png' height='80px' align='middle'></button>
+				</td>
+				</tr>
+				<tr>
+				<input type='image' id='rtl' class='show-detail' src='bilder/rtl.png' height='80px' align='middle'></button>
+				<input type='image' id='8080' class='show-detail' src='bilder/8080.png' height='80px' align='middle'></button>
+				<input type='image' id='rtlmix' class='show-detail' src='bilder/rtlmix.png' height='80px' align='middle'></button>
+				</tr>
+				</table>
 				<p style='font-family: Arial, Verdana' id='demo' />
 			</div>
 		</center>
@@ -38,7 +61,7 @@
    			if ('serviceWorker' in navigator) {
 
 			  navigator.serviceWorker.register('service-worker.js').then(function(registration) {
-			    alert( 'ServiceWorker wurde registriert:', registration.scope);
+			    alert( 'ServiceWorker App radio wurde registriert:', registration.scope);
 			   }
 			  ).catch(function(err) {
 			    alert( 'ServiceWorker wurde leider nicht registriert.', err);
@@ -46,168 +69,49 @@
 			 });
 			}
 
-
-			document.getElementById("touchLocal").onclick = function () {
-				showLeistung();
-
+			document.getElementById("ndr1").onclick = function () {
+				ndr1();
 			};
-			document.getElementById("touchLocal2").onclick = function () {
-				showErtrag();
-
-			};
-			var http=require('http');
-			function showLeistung(){
-
-				var now=0.0;
-				var today=0.0;
-				var all=0.0;
-
-				var url  ='http://voyager:enterprise@10.10.100.254/status.html';
-				console.log(url);
-				http.get(url, function(res){
-				        var str = "";
-				        console.log('Response is '+res.statusCode);
-				 
-				        if (res.statusCode != 200) {
-				            console.log("non-200 response status code:", res.statusCode);
-				            console.log("for url:", url);
-				            res.resume();
-				            return;
-				        }
-				 
-				        res.on('data', function (chunk) {
-				                str += chunk;
-				        });
-				 
-				        res.on('end', function () {
-				            var arr = str.split("\n");
-				            now=readSolData(arr, "webdata_now_p", true);
-					    today=readSolData(arr, "webdata_today_e", true);
-					    all=readSolData(arr, "webdata_total_e", true);
-				 
-				        });		 
-			        });
-				
-				
-				var rsltNow=now.toFixed(2);
-				var rsltToday=today.toFixed(2);
-				var rsltAll=all.toFixed(2);
-
-				var date=new Date();
-				var day=date.getDate();
-				var month=date.getMonth()+1;
-				var year=date.getFullYear();
-				var hours=date.getHours();
-				var minutes=date.getMinutes();
-				var seconds=date.getSeconds();
-
-				var rslt='Momentane Leistung';
-				rslt+='<br>';
-
-				rslt+='('+day+'.'+month+'.'+year+' '+hours+':'+minutes+':'+seconds+')' ;
-				rslt+='<br>';
-
-				rslt+='<h2>'+rsltNow+' kW</h2>';
-				rslt+='jetzt';
-				rslt+='<br>';
-
-				rslt+='<h2>'+rsltToday+' kWh</h2>';
-				rslt+='heute';
-				rslt+='<br>';
-
-				rslt+='<h2>'+rsltAll+' kWh</h2>';
-				rslt+='gesamt';
-				rslt+='<br>';
-
-				document.getElementById('demo').innerHTML=rslt;
-			};
-
-			function showErtrag(){
-
-				var now=0.0;
-				var today=0.0;
-				var all=0.0;
-
-				var url  ='http://voyager:enterprise@10.10.100.254/status.html';
-				console.log(url);
-
-				http.get(url, function(res){
-				        var str = "";
-				        console.log('Response is '+res.statusCode);
-				 
-				        if (res.statusCode != 200) {
-				            console.log("non-200 response status code:", res.statusCode);
-				            console.log("for url:", url);
-				            res.resume();
-				            return;
-				        }
-				 
-				        res.on('data', function (chunk) {
-				                str += chunk;
-				        });
-				 
-				        res.on('end', function () {
-				            var arr = str.split("\n");
-				            now=readSolData(arr, "webdata_now_p", true);
-					    today=readSolData(arr, "webdata_today_e", true);
-					    all=readSolData(arr, "webdata_total_e", true);
-				 
-				        });		 
-			        });
-				
-				var kwh=0.339;
-				var rsltNow=(now*kwh).toFixed(2);
-				var rsltToday=(today*kwh).toFixed(2);
-				var rsltAll=(all*kwh).toFixed(2);
-
-				var date=new Date();
-				var day=date.getDate();
-				var month=date.getMonth()+1;
-				var year=date.getFullYear();
-				var hours=date.getHours();
-				var minutes=date.getMinutes();
-				var seconds=date.getSeconds();
-
-				var rslt='Momentaner Ertrag';
-				rslt+='<br>';
-
-				rslt+='('+day+'.'+month+'.'+year+' '+hours+':'+minutes+':'+seconds+')' ;
-				rslt+='<br>';
-				var euro=' \u20AC';
-				rslt+='<h2>'+rsltNow+euro+'</h2>';
-				rslt+='jetzt';
-
-				rslt+='<h2>'+rsltToday+euro+'</h2>';
-				rslt+='heute';
-
-				rslt+='<h2>'+rsltAll+euro+'</h2>';
-				rslt+='gesamt';
-				rslt+='<br>';
-
-
-				document.getElementById('demo').innerHTML=rslt;
-			};
-
-			function Get(yourUrl){
-			    var Httpreq = new XMLHttpRequest(); // a new request
-			    Httpreq.open("GET",yourUrl,false);
-			    Httpreq.send(null);
-			    return Httpreq.responseText;
-			};
-
-			function readSolData(arr, dataPoint, isNumber = false){
-			    var dpSearch = "var " + dataPoint;
-			     for (var i = 0; i < arr.length; i++){
-			        if (arr[i].includes(dpSearch)) {
-			            if (isNumber){
-			                res = parseFloat(res);
-			                return res;
-			            }
-			            return res;
-			            break;
-				}
-			    }
+			document.getElementById("ndr2").onclick = function () {
+				ndr2();
+			};document.getElementById("antenne").onclick = function () {
+				antenne();
+			};document.getElementById("ffn").onclick = function () {
+				ffn();
+			};document.getElementById("radio21").onclick = function () {
+				radio21();
+			};document.getElementById("8080").onclick = function () {
+				8080();
+			};document.getElementById("njoy").onclick = function () {
+				njoy();
+			};document.getElementById("rtl").onclick = function () {
+				rtl();
+			};document.getElementById("rtlmix").onclick = function () {
+				rtlmix();
 			}
+			
+			function ndr1(){
+			
+			};
+			function ndr2(){
+			
+			};function antenne(){
+			
+			};function ffn(){
+			
+			};function radio21(){
+			
+			};function 8080(){
+			
+			};function rtl(){
+			
+			};function rtlmix(){
+			
+			};function njoy(){
+			
+			};
+
+			
 		</script>
 	</body>
 </html>
