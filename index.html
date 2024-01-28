@@ -30,15 +30,15 @@
 				<input type='image' id='ndr1' class='show-detail' src='bilder/ndr1.jpeg' height='80px' align='middle' border="5px solid orange"></button>
 				</td>
 				<td>
-				<input type='image' id='ndr2' class='show-detail' src='bilder/ndr2.jpeg' height='80px' align='middle' border="5px  transparent"></button>
+				<input type='image' id='ndr2' class='show-detail' src='bilder/ndr2.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
 				</td>
 				<td>
-				<input type='image' id='ffn' class='show-detail' src='bilder/ffn.jpeg' height='80px' align='middle' border="5px  transparent"></button>
+				<input type='image' id='ffn' class='show-detail' src='bilder/ffn.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
 				</td>
 				</tr>
 				<tr>
 				<td>	
-				<input type='image' id='antenne' class='show-detail' src='bilder/antenne.jpeg' height='80px' align='middle' border="5px  transparent"></button>
+				<input type='image' id='antenne' class='show-detail' src='bilder/antenne.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
 				</td>
 				<td>
 				<input type='image' id='radio21' class='show-detail' src='bilder/radio21.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
@@ -70,17 +70,19 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
    			if ('serviceWorker' in navigator) {
 
 			  navigator.serviceWorker.register('service-worker.js').then(function(registration) {
-			    alert( 'ServiceWorker App radio wurde registriert:', registration.scope);
+			    <alert( 'ServiceWorker App radio wurde registriert:', registration.scope);
 			   }
 			  ).catch(function(err) {
 			    alert( 'ServiceWorker wurde leider nicht registriert.', err);
 
 			 });
 			}
-  			
+  			resetBorders();			
+			document.getElementById("ndr1").style.borderColor="orange";
+			
 			document.getElementById("ndr1").onclick = function () {
 				resetBorders();			
-				document.getElementById("ndr1").style.borderColor="orange"
+				document.getElementById("ndr1").style.borderColor="orange";
 				ndr1();
 			};
 			document.getElementById("ndr2").onclick = function () {
@@ -90,37 +92,37 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 			};
 			document.getElementById("antenne").onclick = function () {
 				resetBorders();			
-				document.getElementById("antenne").style.borderColor="orange"
+				document.getElementById("antenne").style.borderColor="orange";
 				antenne();
 			};
 			document.getElementById("ffn").onclick = function () {
 				resetBorders();			
-				document.getElementById("ffn").style.borderColor="orange"
+				document.getElementById("ffn").style.borderColor="orange";
 				ffn();
 			};
 			document.getElementById("radio21").onclick = function () {
 				resetBorders();			
-				document.getElementById("radio21").style.borderColor="orange"
+				document.getElementById("radio21").style.borderColor="orange";
 				radio21();
 			};
 			document.getElementById("r8080").onclick = function () {
 				resetBorders();			
-				document.getElementById("r8080").style.borderColor="orange"
+				document.getElementById("r8080").style.borderColor="orange";
 				r8080();
 			};
 			document.getElementById("njoy").onclick = function () {
 				resetBorders();			
-				document.getElementById("njoy").style.borderColor="orange"
+				document.getElementById("njoy").style.borderColor="orange";
 				njoy();
 			};
 			document.getElementById("rtl").onclick = function () {
 				resetBorders();			
-				document.getElementById("rtl").style.borderColor="orange"
+				document.getElementById("rtl").style.borderColor="orange";
 				rtl();
 			};
 			document.getElementById("rtlmix").onclick = function () {
 				resetBorders();			
-				document.getElementById("rtlmix").style.borderColor="orange"
+				document.getElementById("rtlmix").style.borderColor="orange";
 				rtlmix();
 			}
 
@@ -143,7 +145,7 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 				radio.currentTime = 0;
 				var b=document.getElementById('sender');			
 				b.src="https://www.ndr.de/resources/metadaten/audio/m3u/ndr1niedersachsen.m3u";
-				alert( 'NDR 1');
+				//alert( 'NDR 1');
 				radio.load();
 				radio.play();
 			};
@@ -153,7 +155,7 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 				radio.currentTime = 0;
 				var b=document.getElementById('sender');
 				b.src="http://icecast.ndr.de/ndr/ndr2/niedersachsen/mp3/128/stream.mp3";
-				alert( 'NDR 2');
+				//alert( 'NDR 2');
 				radio.load();
 				radio.play();
 			};function antenne(){
@@ -162,15 +164,15 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 				document.getElementById("myAudio").currentTime = 0;
 				var b=document.getElementById('sender');
 				b.src="https://stream.antenne.com/antenne-nds/mp3-128";
-				alert( 'Antenne');
+				//alert( 'Antenne');
 				radio.load();
 				radio.play();
 			};function ffn(){
 				var radio = document.getElementById("myAudio");
-				radio.pause();
+				//radio.pause();
 				var b=document.getElementById('sender');
 				b.src="https://ffn-de-hz-fal-stream06-cluster01.radiohost.de/ffn_mp3-192";
-				alert( 'FFN');
+				//alert( 'FFN');
 				radio.load();
 				radio.play();
 			};function radio21(){
@@ -178,7 +180,7 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 				radio.pause();
 				var b=document.getElementById('sender');
 				b.src="https://radio21.streamabc.net/radio21-hannover-mp3-192-3735655";
-				alert( 'Radio21');
+				//alert( 'Radio21');
 				radio.load();
 				radio.play();
 			};function r8080(){
@@ -186,7 +188,7 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 				radio.pause();
 				var b=document.getElementById('sender');
 				b.src="https://streams.80s80s.de/100/mp3-192/streams.80s80s.de/";
-				alert( '8080s');
+				//alert( '8080s');
 				radio.load();
 				radio.play();
 			};function rtl(){
@@ -194,7 +196,7 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 				radio.pause();
 				var b=document.getElementById('sender');
 				b.src="https://stream.89.0rtl.de/live/mp3-128/radioplayerhp/";
-				alert( 'RTL 89.0');
+				//alert( 'RTL 89.0');
 				radio.load();
 				radio.play();
 			};function rtlmix(){
@@ -202,7 +204,7 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 				radio.pause();
 				var b=document.getElementById('sender');
 				b.src="https://stream.89.0rtl.de/mix/mp3-128/";
-				alert( 'RTL 89.0 in The Mix');
+				//alert( 'RTL 89.0 in The Mix');
 				radio.load();
 				radio.play();
 			};function njoy(){
@@ -210,7 +212,7 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 				radio.pause();
 				var b=document.getElementById('sender');
 				b.src="http://www.ndr.de/resources/metadaten/audio/m3u/n-joy.m3u";
-				alert( 'NJoy');
+				//alert( 'NJoy');
 				radio.load();
 				radio.play();
 			};
