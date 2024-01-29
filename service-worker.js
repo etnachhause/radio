@@ -12,8 +12,10 @@ var filesToCache = [
 	'bilder/rtl.jpeg',
 	'bilder/rtlmix.jpeg',
 	'bilder/njoy.jpeg',
-	'bilder/sonne144.png',
-	'bilder/touch-icon-iphone.png'	
+	'bilder/radio.png',
+	'bilder/radiotitle.png',
+	'bilder/andys.png',
+	'bilder/touch-icon-iphone2.png'	
 ];
 var latestCacheName = 'V1';
 
