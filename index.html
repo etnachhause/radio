@@ -167,13 +167,13 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 					radio.currentTime = 0;
 				}
 			}
-			
 			function ndr1(){
 				var radio = document.getElementById("myAudio");				
 				radio.pause();
 				radio.currentTime = 0;
-				var b=document.getElementById('sender');			
-				b.src="https://www.ndr.de/resources/metadaten/audio/m3u/ndr1niedersachsen.m3u";
+				var b=document.getElementById('sender');
+				b.src="https://icecast.ndr.de/ndr/ndr1niedersachsen/hannover/mp3/128/stream.mp3";
+				//b.src="https://www.ndr.de/resources/metadaten/audio/m3u/ndr1niedersachsen.m3u";
 				//alert( 'NDR 1');
 				radio.load();
 				radio.play();
@@ -240,7 +240,8 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 				var radio = document.getElementById("myAudio");
 				radio.pause();
 				var b=document.getElementById('sender');
-				b.src="http://www.ndr.de/resources/metadaten/audio/m3u/n-joy.m3u";
+				b.src="https://icecast.ndr.de/ndr/njoy/live/mp3/128/stream.mp3";
+				//b.src="http://www.ndr.de/resources/metadaten/audio/m3u/n-joy.m3u";
 				//alert( 'NJoy');
 				radio.load();
 				radio.play();
