@@ -31,7 +31,7 @@
 		<div style="text-align: center">
 			<br>
 			
-			<input type='image' id='title' class='show-detail' src='bilder/radiotitleblack.png'  align='middle' "></button>
+			<input type='image' id='title' src='bilder/radiotitleblack.png'  align='middle' "></button>
 
 			<table align='center'>
 			<tr>
@@ -154,6 +154,7 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 			}
 
 			function mute(){
+				alert('toggle'+toggle);
 				if(toggle){
 					radio.load();
 					radio.play();
