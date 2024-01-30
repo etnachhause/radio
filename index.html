@@ -26,51 +26,51 @@
 		</style>
 	</head>
 	<body>
-		
-		<center>
-			<div style="text-align: center">
-				<br>
-				
-				<input type='image' id='title' class='show-detail' src='bilder/radiotitleblack.png'  align='middle' "></button>
+	
+	<center>
+		<div style="text-align: center">
+			<br>
+			
+			<input type='image' id='title' class='show-detail' src='bilder/radiotitleblack.png'  align='middle' "></button>
 
-				<table align='center'>
-				<tr>
-				<td id="bndr1" border="2px solid orange">
-				<input type='image' id='ndr1' class='show-detail' src='bilder/ndr1.jpeg' height='80px' align='middle' border="5px solid orange"></button>
-				</td>
-				<td>
-				<input type='image' id='ndr2' class='show-detail' src='bilder/ndr2.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
-				</td>
-				<td>
-				<input type='image' id='ffn' class='show-detail' src='bilder/ffn.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
-				</td>
-				</tr>
-				<tr>
-				<td>	
-				<input type='image' id='antenne' class='show-detail' src='bilder/antenne.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
-				</td>
-				<td>
-				<input type='image' id='radio21' class='show-detail' src='bilder/radio21.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
-				</td>
-				<td>
-				<input type='image' id='njoy' class='show-detail' src='bilder/njoy.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
-				</td>
-				</tr>
-				<tr>
-				<td>
-				<input type='image' id='rtl' class='show-detail' src='bilder/rtl.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
-				</td>
-				<td>
-				<input type='image' id='rtlmix' class='show-detail' src='bilder/rtlmix.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
-				</td>
-				<td>
-				<input type='image' id='r8080' class='show-detail' src='bilder/8080.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
-				</td>
-				</tr>
-				</table>
-				<img src='bilder/byandy.png'>
-			</div>
-		</center>
+			<table align='center'>
+			<tr>
+			<td id="bndr1" border="2px solid orange">
+			<input type='image' id='ndr1' class='show-detail' src='bilder/ndr1.jpeg' height='80px' align='middle' border="5px solid orange"></button>
+			</td>
+			<td>
+			<input type='image' id='ndr2' class='show-detail' src='bilder/ndr2.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
+			</td>
+			<td>
+			<input type='image' id='ffn' class='show-detail' src='bilder/ffn.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
+			</td>
+			</tr>
+			<tr>
+			<td>	
+			<input type='image' id='antenne' class='show-detail' src='bilder/antenne.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
+			</td>
+			<td>
+			<input type='image' id='radio21' class='show-detail' src='bilder/radio21.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
+			</td>
+			<td>
+			<input type='image' id='njoy' class='show-detail' src='bilder/njoy.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
+			</td>
+			</tr>
+			<tr>
+			<td>
+			<input type='image' id='rtl' class='show-detail' src='bilder/rtl.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
+			</td>
+			<td>
+			<input type='image' id='rtlmix' class='show-detail' src='bilder/rtlmix.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
+			</td>
+			<td>
+			<input type='image' id='r8080' class='show-detail' src='bilder/8080.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
+			</td>
+			</tr>
+			</table>
+			<img src='bilder/byandy.png'>
+		</div>
+	</center>
 <audio id="myAudio" autoplay="autoplay class="hidden" preload="none">
   <source id="sender" src="https://www.ndr.de/resources/metadaten/audio/m3u/ndr1niedersachsen.m3u" type="audio/mpeg">
 Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
@@ -86,9 +86,14 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 
 			 });
 			}
+			var toggle=true;
   			resetBorders();			
 			document.getElementById("ndr1").style.borderColor="orange";
-			
+
+			document.getElementById("title").onclick = function () {
+				toggle=!toggle;
+				mute();
+			};
 			document.getElementById("ndr1").onclick = function () {
 				resetBorders();			
 				document.getElementById("ndr1").style.borderColor="orange";
@@ -146,6 +151,16 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 				document.getElementById("rtlmix").style.borderColor="transparent";
 				document.getElementById("radio21").style.borderColor="transparent";
 
+			}
+
+			function mute(){
+				if(toggle){
+					radio.load();
+					radio.play();
+				}else{
+					radio.pause();
+					radio.currentTime = 0;
+				}
 			}
 			
 			function ndr1(){
