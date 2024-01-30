@@ -141,6 +141,8 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 			}
 
 			function resetBorders(){
+				document.getElementById("title").src='bilder/radiotitleblack.png';
+				toggle=true;
 				document.getElementById("ndr1").style.borderColor="transparent";
 				document.getElementById("ndr2").style.borderColor="transparent";
 				document.getElementById("antenne").style.borderColor="transparent";
@@ -181,7 +183,7 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 				radio.pause();
 				radio.currentTime = 0;
 				var b=document.getElementById('sender');
-				b.src="http://icecast.ndr.de/ndr/ndr2/niedersachsen/mp3/128/stream.mp3";
+				b.src="https://icecast.ndr.de/ndr/ndr2/niedersachsen/mp3/128/stream.mp3";
 				//alert( 'NDR 2');
 				radio.load();
 				radio.play();
