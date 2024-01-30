@@ -154,11 +154,13 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 			}
 
 			function mute(){
-				alert('toggle'+toggle);
+				var radio = document.getElementById("myAudio");				
 				if(toggle){
+					document.getElementById("title").src='bilder/radiotitleblack.png';
 					radio.load();
 					radio.play();
 				}else{
+					document.getElementById("title").src='bilder/radiotitlered.png';
 					radio.pause();
 					radio.currentTime = 0;
 				}
