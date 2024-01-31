@@ -35,8 +35,8 @@
 
 			<table align='center'>
 			<tr>
-			<td id="bndr1" border="2px solid orange">
-			<input type='image' id='ndr1' class='show-detail' src='bilder/ndr1.jpeg' height='80px' align='middle' border="5px solid orange"></button>
+			<td">
+			<input type='image' id='ndr1' class='show-detail' src='bilder/ndr1.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
 			</td>
 			<td>
 			<input type='image' id='ndr2' class='show-detail' src='bilder/ndr2.jpeg' height='80px' align='middle' border="5px solid transparent"></button>
@@ -88,7 +88,7 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 			var toggle=true;
   			resetBorders();			
 			document.getElementById("ndr1").style.borderColor="orange";
-document.getElementById("title").style.filter="drop-shadow(5px 5px 10px black)";
+			document.getElementById("title").style.filter="drop-shadow(5px 5px 10px black)";
 			document.getElementById("title").onclick = function () {
 				toggle=!toggle;
 				mute();
@@ -147,12 +147,26 @@ document.getElementById("title").style.filter="drop-shadow(5px 5px 10px black)";
 				document.getElementById("ndr2").style.borderColor="transparent";
 				document.getElementById("ndr2").style.filter="drop-shadow(5px 5px 10px black)";
 				document.getElementById("antenne").style.borderColor="transparent";
+				document.getElementById("antenne").style.filter="drop-shadow(5px 5px 10px black)";
+
 				document.getElementById("r8080").style.borderColor="transparent";
+				document.getElementById("r8080").style.filter="drop-shadow(5px 5px 10px black)";
+
 				document.getElementById("ffn").style.borderColor="transparent";
+				document.getElementById("ffn").style.filter="drop-shadow(5px 5px 10px black)";
+
 				document.getElementById("njoy").style.borderColor="transparent";
+				document.getElementById("njoy").style.filter="drop-shadow(5px 5px 10px black)";
+
 				document.getElementById("rtl").style.borderColor="transparent";
+				document.getElementById("rtl").style.filter="drop-shadow(5px 5px 10px black)";
+
 				document.getElementById("rtlmix").style.borderColor="transparent";
+				document.getElementById("rtlmix").style.filter="drop-shadow(5px 5px 10px black)";
+
 				document.getElementById("radio21").style.borderColor="transparent";
+				document.getElementById("radio21").style.filter="drop-shadow(5px 5px 10px black)";
+
 
 			}
 
