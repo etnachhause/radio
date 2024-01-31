@@ -174,12 +174,15 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 				var radio = document.getElementById("myAudio");				
 				if(toggle){
 					document.getElementById("title").src='bilder/radiotitleblack.png';
-					document.getElementById("title").style.margin='7px 8px 0px 0px';
+					//document.getElementById("title").style.margin='7px 8px 0px 0px';
+					document.getElementById("title").style.filter="drop-shadow(0px 0px 0px black)";
+
 					radio.load();
 					radio.play();
 				}else{
-					document.getElementById("title").src='bilder/radiotitlered.png';
-					document.getElementById("title").style.margin='0px';
+					//document.getElementById("title").src='bilder/radiotitlered.png';
+					//document.getElementById("title").style.margin='0px';
+					document.getElementById("title").style.filter="drop-shadow(5px 5px 10px black)";
 					radio.pause();
 					radio.currentTime = 0;
 				}
