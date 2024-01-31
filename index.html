@@ -174,11 +174,12 @@ Sorry - Ihr Browser hat keine Unterstützung für dieses Audio-Format.
 				var radio = document.getElementById("myAudio");				
 				if(toggle){
 					document.getElementById("title").src='bilder/radiotitleblack.png';
+					document.getElementById("title").margin-top='2px';
 					radio.load();
 					radio.play();
 				}else{
 					document.getElementById("title").src='bilder/radiotitlered.png';
-					document.getElementById("title").margin='2px';
+					document.getElementById("title").margin='0px';
 					radio.pause();
 					radio.currentTime = 0;
 				}
